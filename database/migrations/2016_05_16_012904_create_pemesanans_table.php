@@ -24,6 +24,8 @@ class CreatePemesanansTable extends Migration {
 			$table->string('hari');
 			$table->string('jeniskue');
 			$table->string('rasa');
+			$table->string('jumlah');
+			$table->string('total');
 			$table->string('no_pesanan');
 			$table->string('status');
 			$table->timestamps();

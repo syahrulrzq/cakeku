@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use  App\Pemesanan;
 use Illuminate\Http\Request;
+use App\kue;
 use PDF;
 
 class PesananController extends Controller {
@@ -38,11 +39,12 @@ class PesananController extends Controller {
 		$pemesanan->save();
 		return redirect('/admin/pesanan');
 	}
-		public function destroy($id){
+		public function destroy($id)
+	{
 			$pemesanan = Pemesanan::find($id);
 			$pemesanan->delete();
 			return redirect('/admin/pesanan');
-		}
+	}
 
 		public function search(Request $r)
 	{
@@ -68,6 +70,14 @@ class PesananController extends Controller {
 	}
 	public function datakue()
 	{
-		return view ('datakue');
+		$data = kue::all();
+		return view ('datakue')->with('data', $data);
+
+	}
+	public function hapus($id)
+	{
+			$kue = kue::find($id);
+			$kue->delete();
+			return redirect('/admin/pesanan/datakue');
 	}
 }

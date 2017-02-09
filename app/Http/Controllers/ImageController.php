@@ -16,8 +16,7 @@ class ImageController extends Controller {
 	 */
 	public function index($filename)
 	{
-		$path = storage_path().
-	'/' . $filename;
+		$path = storage_path().'/'. $filename;
 	$file = File::get($path);
 	$type = File::mimeType($path);
 	$response = Response::make($file, 200);

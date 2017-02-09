@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!---->
 			<div class="header-logo">
 				<div class="logo">
-					<a href="{{url('/welcome')}}"><img src="{{url('master/images/logo.png')}}" alt="" ></a>
+					<a href="{{url('/welcome')}}"><img src="{{url('master/images/logocake.png')}}" alt="" ></a>
 				</div>
 				<div class="top-nav">
 					<span class="icon"><img src="{{url('master/images/menu.png')}}" alt=""> </span>
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul>
 						<li><a href="{{url('/pesan')}}" class="scroll" data-hover="Order ">Order </a></li>
 						<li><a href="#gallery" class="scroll" data-hover="Gallery" >Gallery</a></li>
-						<li><a href="{{url('/')}}"><img src="{{url('master/images/logo.png')}}" alt="" ></a></li>
+						<li><a href="{{url('/')}}"><img src="{{url('master/images/logocake.png')}}" alt="" ></a></li>
 						<li><a href="{{url('/order')}}" class="scroll" data-hover="Cek Order">Cek Order</a></li>
 						<li ><a href="{{url('/admin/pesanan')}}" class="scroll" data-hover="Admin">Admin</a> </li>
 						

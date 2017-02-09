@@ -27,9 +27,8 @@ class KueController extends Controller {
 		$photo->move('img',$filename.'.'.$ext);
 		$data->gambar_pemesanan = $filename.'.'.$ext;	
 		$data->save();
-		return redirect('/admin/pesanan');
+		return redirect('/admin/pesanan/datakue');
 	}
-
 	/**
 	 * Show the form for creating a new resource.
 	 *

@@ -127,7 +127,7 @@ class PemesananController extends Controller {
 			$a->Port = 587;
 			$a->Username = "aroeljhonsons@gmail.com";
 			$a->Password = "iwhjrgbsceyhimxa";
-			$a->SetFrom("admin@tatto.com", "Admin");
+			$a->SetFrom("admin@cakeku.com", "Admin");
 			$a->Subject = $subject;
 			$a->MsgHTML($message);
 			$a->addAddress($email);
@@ -138,5 +138,64 @@ class PemesananController extends Controller {
 		}
 
 	}
+	public function submit2(Request $r)
+	{
+		$kue = \App\kue::where('id', $r->input('kue_id'))->first();
+
+
+		$data = new Pemesanan;
+		$data->nama = Input::get('nama');
+		$data->alamat = Input::get('alamat');
+		$data->telepon = Input::get('telp');
+		$data->hari = Input::get('hari');
+		$data->pukul = Input::get('pukul');	
+		$data->rasa = $kue->rasa;
+		$data->jeniskue = $kue->jeniskue;
+		$data->email = Input::get('email');
+		$data->no_pesanan = str_random(8);
+		$data->status = 'pending';
+		$data->jumlah=Input::get('jumlah_pesanan');
+		$data->total=Input::get('harga_total');
+		$data->gambar_pemesanan = $kue->gambar_pemesanan;
+
+		$email = Input::get('email');
+		$subject = "CakeKu";
+		$message = 
+		"Nama Pemesan: ".$data->nama."<br>".
+		"<b>*Copy nomor pesanan anda</b><br>".
+		"No. Pesanan: ".$data->no_pesanan."<br>".
+		"Klik <a href='".url('order')."'>disini</a> untuk mengecek orderan anda!";
+
+		$data->save();
+
+
+		$nomor_pesanan = Pemesanan::orderBy('id','desc')->first();
+		$success = true;
+		try {
+			$a = new \PHPMailer(true);
+			$a->isSMTP();
+			$a->CharSet = "utf-8";
+			$a->SMTPAuth = true;
+			$a->SMTPSecure = "tls";
+			$a->Host = "smtp.gmail.com";
+			$a->Port = 587;
+			$a->Username = "aroeljhonsons@gmail.com";
+			$a->Password = "iwhjrgbsceyhimxa";
+			$a->SetFrom("admin@cakeku.com", "Admin");
+			$a->Subject = $subject;
+			$a->MsgHTML($message);
+			$a->addAddress($email);
+			$a->send();
+			return response()->json(compact('nomor_pesanan','success'));
+		} catch (Exception $e) {
+			dd($e);
+		}
+
+
+
+		return redirect(url('userkue/'.$r->input('id')))->with('message','success');
+
+	}
+
 
 }

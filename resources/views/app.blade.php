@@ -246,7 +246,7 @@
         
         <li class="active treeview">
           <a href="{{ url('admin/pesanan/inputkue') }}">
-            <i class="fa fa-book"></i> <span>Input Kue</span></a>
+            <i class="fa fa-birthday-cake"></i> <span>Input Kue</span></a>
         </li>
         </ul>
 

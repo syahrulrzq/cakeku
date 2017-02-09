@@ -18,29 +18,23 @@ Data Pemesanan
 @section('content')
 
 <script type="text/javascript">
-  function showData(no_pesanan,email,nama,alamat,telepon,hari,pukul,gambar,jeniskue,rasa,status) {
-    $('#nama-pesan').html(nama);
-    $('#no_pesanan').html(no_pesanan);
-    $('#alamat-pesan').html(alamat);
-    $('#telp-pesan').html(telepon);
-    $('#tanggal-pesan').html(hari);
-    $('#pukul-pesan').html(pukul);
-    $('#email').html(email);
+  function showData(nama,harga,gambar,jeniskue,rasa) {
+    $('#namakue').html(nama);
+    $('#harga').html(harga);
     $('#gambar-pesan').attr('src',gambar);
     $('#jeniskue').html(jeniskue);
     $('#rasa').html(rasa);
-    $('#status').html(status);
   }
 </script>
 
                 <table aria-describedby="example2_info" role="grid" id="example2" class="table table-bordered table-hover dataTable">
                 <thead>
                 <tr role="row">
-                    <th>No</th>
-            <th>Nama Pemesan</th>
-            <th>Nomor Telepon</th>
-            <th>Nomor Pemesanan</th>
-            <th>Status</th>
+            <th>No</th>
+            <th>Nama Kue</th>
+            <th>Harga</th>
+            <th>Jenis Kue</th>
+            <th>Rasa</th>
             <th>Aksi</th>
                 </tr>
                 </thead>
@@ -50,29 +44,14 @@ Data Pemesanan
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('images'.'/'.$pesanan->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->nama }}','{{ $pesanan->harga }}','{{ url('img'.'/'.$pesanan->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
                       </td>
-                      <td>{{$pesanan->telepon}}</td>
-                      <td>{{$pesanan->no_pesanan}}</td>
+                      <td>{{$pesanan->harga}}</td>
+                      <td>{{$pesanan->jeniskue}}</td>
+                      <td>{{$pesanan->rasa}}</td>
                       <td>
-                      @if($pesanan->status=='pending')
-                      PENDING
-                      @else
-                      @if($pesanan->status=='DITOLAK')
-                      DITOLAK
-                      @elseif($pesanan->status=='DITERIMA')
-                      DITERIMA
-                      @endif
-                      @endif
-                      </td>
-                      <td>
-                      <a href="{{url('admin/pesanan/'.$pesanan->id.'/destroy')}}" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
-                        @if($pesanan->status=='pending')
-                      <a href="{{url('admin/pesanan/'.$pesanan->id.'/reject')}}" onclick="return confirm('Apakah anda yakin ingin menolak pesanan?')" class="btn btn-danger">Tolak</a>
-                      <a href="{{url('admin/pesanan/'.$pesanan->id.'/accept')}}" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Terima</a>
-
-                      @else
-                      @endif
+                      <a href="{{url('admin/pesanan/'.$pesanan->id.'/hapus')}}" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
+                        
                       </td>
                     </tr>
                 @endforeach
@@ -91,32 +70,12 @@ Data Pemesanan
         <div class="row" style="margin: auto;">
             <table class="table">
                 <tr>
-                    <td>Nomor Pemesanan</td>
-                    <td id="no_pesanan"></td>
+                    <td>Harga</td>
+                    <td id="harga"></td>
                 </tr>
                 <tr>
-                    <td>Nama Pemesan</td>
-                    <td id="nama-pesan"></td>
-                </tr>
-                <tr>
-                    <td>Alamat</td>
-                    <td id="alamat-pesan"></td>
-                </tr>
-                <tr>
-                    <td>No. Telepon</td>
-                    <td id="telp-pesan"></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td id="email"></td>
-                </tr>
-                <tr>
-                    <td>Pukul</td>
-                    <td id="pukul-pesan"></td>
-                </tr>
-                <tr>
-                    <td>Tanggal</td>
-                    <td id="tanggal-pesan"></td>
+                    <td>Nama Kue</td>
+                    <td id="namakue"></td>
                 </tr>
                 <tr>
                     <td>Jenis Kue</td>
@@ -126,10 +85,7 @@ Data Pemesanan
                     <td>Rasa</td>
                     <td id="rasa"></td>
                 </tr>
-                <tr>
-                    <td>Status</td>
-                    <td id="status"></td>
-                </tr>
+                
             </table>
         </div>
         <div>

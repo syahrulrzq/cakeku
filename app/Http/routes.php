@@ -20,6 +20,7 @@ Route::group(['prefix'=>'admin'], function(){
 		Route::get('pesanan/{id}/reject', 'PesananController@update_reject');
 		Route::get('pesanan/{id}/accept','PesananController@update_accept');
 		Route::get('pesanan/{id}/destroy','PesananController@destroy');
+		Route::get('pesanan/{id}/hapus','PesananController@hapus');
 		Route::get('pesanan/search','PesananController@search');
 		Route::get('pesanan/report','PesananController@report');
 		Route::get('pesanan/bulan','PesananController@bulan');
@@ -35,8 +36,10 @@ Route::post('pesan/store', 'PemesananController@submit');
 
 
 Route::get('/images/{filename}','ImageController@index');
+Route::get('/img/{filename}','ImageController@index');
 Route::get('auth/login','Auth\AuthController@getLogin');
 Route::post('auth/login','Auth\AuthController@postLogin');
 Route::get('auth/logout','Auth\AuthController@getLogout');
 Route::get('input/user','TestController@TestInput');
 Route::get('userkue/{id}','WelcomeController@detailkue');
+Route::post('userkue/submit2', 'PemesananController@submit2');

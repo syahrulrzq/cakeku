@@ -26,7 +26,8 @@ Data Pemesanan
     $('#tanggal-pesan').html(hari);
     $('#pukul-pesan').html(pukul);
     $('#email').html(email);
-    $('#gambar-pesan').attr('src',gambar);
+    $('#gambar-pesan').attr('src',gambar.replace("img  ","images"));
+      console.log()
     $('#jeniskue').html(jeniskue);
     $('#rasa').html(rasa);
     $('#status').html(status);
@@ -50,7 +51,7 @@ Data Pemesanan
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('images'.'/'.$pesanan->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('img  '.'/'.$pesanan->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
                       </td>
                       <td>{{$pesanan->telepon}}</td>
                       <td>{{$pesanan->no_pesanan}}</td>

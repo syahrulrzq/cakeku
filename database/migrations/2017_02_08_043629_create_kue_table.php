@@ -20,6 +20,8 @@ class CreateKueTable extends Migration {
 			$table->string('jeniskue');
 			$table->string('rasa');
 			$table->integer('harga');
+			$table->string('jumlah');
+			$table->string('total');
 			$table->timestamps();
 		});
 	}

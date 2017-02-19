@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="top-nav">
 					<span class="icon"><img src="{{url('master/images/menu.png')}}" alt=""> </span>
-					<ul><li><a href="{{url('/pesan')}}" class="scroll" data-hover="Order ">Order </a></li>
+					<ul><li><a href="{{url('/pesan')}}" class="scroll" data-hover="Custom Order">Custom Order</a></li>
 						<li><a href="#gallery" class="scroll" data-hover="Gallery" >Gallery</a></li>
 						<li><a href="{{url('/order')}}" class="scroll" data-hover="Cek Order">Cek Order</a></li>
 						<li ><a href="{{url('/admin/pesanan')}}" class="scroll" data-hover="Admin">Admin</a> </li>
@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!---->
 				<div class="top-menu">					
 					<ul>
-						<li><a href="{{url('/pesan')}}" class="scroll" data-hover="Order ">Order </a></li>
+						<li><a href="{{url('/pesan')}}" class="scroll" data-hover="Custom Order ">Custom Order </a></li>
 						<li><a href="#gallery" class="scroll" data-hover="Gallery" >Gallery</a></li>
 						<li><a href="{{url('/')}}"><img src="{{url('master/images/logocake.png')}}" alt="" ></a></li>
 						<li><a href="{{url('/order')}}" class="scroll" data-hover="Cek Order">Cek Order</a></li>
@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<img src="master/images/1.jpg" class="img-responsive" alt="">
 		</div>
 		<div class="col-md-8 we-lf">
-			   	<p>Many people want to have a real tattoo but too afraid to get any body art for themself, they are afraid of needles or afraid of being judged. Or some of them having not good experience with temporary tattoo they got from childhood snack which smudging shortly after application. Based on those experiences, we created temporary tattoo in better way. We drawing everyday objects, images, that represent the things that people love and we drawing nice wordings to motivate people. Well, it's a simple way to make better art and be more happy. </p>
+			   	<p>Cake is often served as a celebratory dish on ceremonial occasions, such as weddings, anniversaries, and birthdays. There are countless cake recipes; some are bread-like, some are rich and elaborate, and many are centuries old. Cake making is no longer a complicated procedure; while at one time considerable labor went into cake making (particularly the whisking of egg foams), baking equipment and directions have been simplified so that even the most amateur cook may bake a cake. </p>
 			</div>
 			<div class="clearfix"></div>
 		</div>

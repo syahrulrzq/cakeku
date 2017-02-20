@@ -208,6 +208,8 @@
                     if (data.success==true) {
                         $('#info-message').removeClass('none');
                         $('#no-pesanan').html(data.order.no_pesanan);
+                        $('#jumlah').html(data.order.jumlah);
+                        $('#total').html(data.order.total);
                         $('#nama-pesan').html(data.order.nama);
                         $('#alamat-pesan').html(data.order.alamat);
                         $('#telp-pesan').html(data.order.telepon);

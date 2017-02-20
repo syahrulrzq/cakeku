@@ -24,6 +24,14 @@
                     <td id="no-pesanan"></td>
                 </tr>
                 <tr>
+                    <td>Jumlah</td>
+                    <td id="jumlah"></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td id="total"></td>
+                </tr>
+                <tr>
                     <td>Nama Pemesan</td>
                     <td id="nama-pesan"></td>
                 </tr>

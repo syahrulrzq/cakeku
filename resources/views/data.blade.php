@@ -18,7 +18,7 @@ Data Pemesanan
 @section('content')
 
 <script type="text/javascript">
-  function showData(no_pesanan,email,nama,alamat,telepon,hari,pukul,gambar,jeniskue,rasa,status) {
+  function showData(no_pesanan,email,nama,alamat,telepon,hari,pukul,gambar,jeniskue,rasa,status,total,jumlah) {
     $('#nama-pesan').html(nama);
     $('#no_pesanan').html(no_pesanan);
     $('#alamat-pesan').html(alamat);
@@ -31,6 +31,8 @@ Data Pemesanan
     $('#jeniskue').html(jeniskue);
     $('#rasa').html(rasa);
     $('#status').html(status);
+    $('#total').html(total);
+    $('#jumlah').html(jumlah);
   }
 </script>
 
@@ -54,7 +56,7 @@ Data Pemesanan
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('img/'.$kue->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('img/'.$kue->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}','{{ $pesanan->total }}','{{ $pesanan->jumlah }}')">{{$pesanan->nama}}</a>
                       </td>
                       <td>{{$pesanan->telepon}}</td>
                       <td>{{$pesanan->no_pesanan}}</td>
@@ -99,6 +101,14 @@ Data Pemesanan
                     <td id="no_pesanan"></td>
                 </tr>
                 <tr>
+                    <td>Jumlah</td>
+                    <td id="jumlah"></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td id="total"></td>
+                </tr>
+                <tr>
                     <td>Nama Pemesan</td>
                     <td id="nama-pesan"></td>
                 </tr>
@@ -134,6 +144,7 @@ Data Pemesanan
                     <td>Status</td>
                     <td id="status"></td>
                 </tr>
+                
             </table>
         </div>
         <div>

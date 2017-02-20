@@ -48,10 +48,13 @@ Data Pemesanan
                 <tbody>
                 <?php $i = 1; ?>
                 @foreach($data as $pesanan)
+                <?php
+                $kue = App\kue::find($pesanan->kue_id);
+                ?>
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('img  '.'/'.$pesanan->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->email }}', '{{ $pesanan->nama }}','{{ $pesanan->alamat }}','{{ $pesanan->telepon }}','{{ $pesanan->hari }}','{{ $pesanan->pukul }}','{{ url('img/'.$kue->gambar_pemesanan) }}','{{ $pesanan->jeniskue }}','{{ $pesanan->rasa }}','{{ $pesanan->status }}')">{{$pesanan->nama}}</a>
                       </td>
                       <td>{{$pesanan->telepon}}</td>
                       <td>{{$pesanan->no_pesanan}}</td>

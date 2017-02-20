@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\kue;
 
 class UserController extends Controller {
 
@@ -14,6 +15,7 @@ class UserController extends Controller {
 	 */
 	public function getPesan()
 	{
-		return view('pesan');
+		$kue = kue::all();
+		return view('pesan',['kue'=>$kue]);
 	}
 }

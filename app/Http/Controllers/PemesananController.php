@@ -83,7 +83,7 @@ class PemesananController extends Controller {
 		$data->email = Input::get('email');
 		$data->no_pesanan = str_random(8);
 		$data->status = 'pending';
-
+		$data->kue_id = Input::get('jeniskue');
 		// if(Input::hasFile('gambar_pesanan')){
 		// 	$gambar = date("YmdHis").uniqid().".".Input::file('gambar_pesanan')->getClientOriginalExtension();
 		// 	Input::file('gambar_pesanan')->move(storage_path(),$gambar);
@@ -156,6 +156,7 @@ class PemesananController extends Controller {
 		$data->status = 'pending';
 		$data->jumlah=Input::get('jumlah_pesanan');
 		$data->total=Input::get('harga_total');
+		$data->kue_id=Input::get('kue_id');
 		$data->gambar_pemesanan = $kue->gambar_pemesanan;
 
 		$email = Input::get('email');

@@ -70,7 +70,7 @@
             <!-- form start -->
         @if (count($errors) > 0)
         <div class="alert alert-danger">
-        <ul>
+        <ul\>
             @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
             @endforeach
@@ -129,10 +129,9 @@
             <div class="form-group">
                   <label>Jenis Kue</label>
                   <select name="jeniskue" class="form-control">
-                    <option value="Kue Tart">Kue Tart</option>
-                    <option value="Kue Black Forest">Kue Black Forest</option>
-                    <option value="Kue Lapis">Kue Lapis</option>
-                    <option value="Kue Pelangi">Kue Pelangi</option>
+                  @foreach($kue as $value)
+                    <option value="{{$value->id}}">{{$value->nama}}</option>
+                  @endforeach
                   </select>
                 </div>
 

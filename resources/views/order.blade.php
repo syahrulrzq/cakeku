@@ -64,6 +64,10 @@
                     <td id="rasa"></td>
                 </tr>
                 <tr>
+                    <td>Status</td>
+                    <td id="status"></td>
+                </tr>
+                <tr>
                     <td>Gambar Pemesanan</td>
                     <td><img src="" id="gambar"></td>
                 </tr>
